@@ -38,7 +38,7 @@
               />
             </div>
             <div class="col-md-6 form-group">
-              <label for="totalLayer">Total layer</label>
+              <label for="totalLayer">Total gelar (pcs)</label>
               <input
                 type="number"
                 class="form-control"
@@ -103,7 +103,7 @@
           var STD = 0.6;
 
           S = PR - (TL * PG + TC * STD * 2);
-          $("#sisa-fabric").text(S + ' (m)');
+          $("#sisa-fabric").text(S.toFixed(2) + ' (m)');
         }
       );
     </script>
