@@ -29,7 +29,7 @@
           <hr class="bg-white" />
           <div class="row">
             <div class="col-md-6 form-group">
-              <label for="panjangRoll">Panjang roll (cm)</label>
+              <label for="panjangRoll">Panjang roll (m)</label>
               <input
                 type="number"
                 class="form-control"
@@ -100,10 +100,10 @@
           var TL = $("#totalLayer").val();
           var PG = $("#panjangGelar").val();
           var TC = $("#cacatFabric").val();
-          var STD = 60;
+          var STD = 0.6;
 
           S = PR - (TL * PG + TC * STD * 2);
-          $("#sisa-fabric").text(S);
+          $("#sisa-fabric").text(S + 'M');
         }
       );
     </script>
