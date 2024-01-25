@@ -120,11 +120,11 @@
           var TL = $("#totalLayer").val();
           var PG = $("#panjangGelar").val();
           var TC = $("#cacatFabric").val();
-          var A = $("#allowanceFabric").val()/100;
+          var A = $("#allowanceFabric").val();
           var Q = $("#totalQuantity").val();
           var STD = 1.2;
 
-          S = PR - (TL * PG + TC * STD) - (A * Q);
+          S = PR - (TL * PG + TC * STD) - (A * Q/100);
           $("#sisa-fabric").text(S.toFixed(2) + ' (m)');
         }
       );
