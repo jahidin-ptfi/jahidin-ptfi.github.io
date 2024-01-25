@@ -29,7 +29,7 @@
           <hr class="bg-white" />
           <div class="row">
             <div class="col-md-6 form-group">
-              <label for="panjangRoll">Panjang roll (cm)</label>
+              <label for="panjangRoll">Panjang roll (m)</label>
               <input
                 type="number"
                 class="form-control"
@@ -49,7 +49,7 @@
           </div>
           <div class="row">
             <div class="col-md-6 form-group">
-              <label for="panjangGelar">Panjang gelar (cm)</label>
+              <label for="panjangGelar">Panjang gelar (m)</label>
               <input
                 type="number"
                 class="form-control"
@@ -69,7 +69,7 @@
           </div>
           <div class="row">
             <div class="col-md-6 form-group">
-              <label for="allowanceFabric">Panjang allowance fabric</label>
+              <label for="allowanceFabric">Panjang allowance fabric (cm)</label>
               <input
                 type="number"
                 class="form-control"
@@ -120,13 +120,12 @@
           var TL = $("#totalLayer").val();
           var PG = $("#panjangGelar").val();
           var TC = $("#cacatFabric").val();
-          var A = $("#allowanceFabric").val();
+          var A = $("#allowanceFabric").val()/100;
           var Q = $("#totalQuantity").val();
           var STD = 1.2;
 
           S = PR - (TL * PG + TC * STD) - (A * Q);
-          var SFix = S / 100;
-          $("#sisa-fabric").text(SFix.toFixed(2) + ' (m)');
+          $("#sisa-fabric").text(S.toFixed(2) + ' (m)');
         }
       );
     </script>
