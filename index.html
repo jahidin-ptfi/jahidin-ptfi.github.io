@@ -29,7 +29,7 @@
           <hr class="bg-white" />
           <div class="row">
             <div class="col-md-6 form-group">
-              <label for="panjangRoll">Panjang roll (m)</label>
+              <label for="panjangRoll">Panjang roll (cm)</label>
               <input
                 type="number"
                 class="form-control"
@@ -49,7 +49,7 @@
           </div>
           <div class="row">
             <div class="col-md-6 form-group">
-              <label for="panjangGelar">Panjang gelar</label>
+              <label for="panjangGelar">Panjang gelar (cm)</label>
               <input
                 type="number"
                 class="form-control"
@@ -63,6 +63,26 @@
                 type="number"
                 class="form-control"
                 id="cacatFabric"
+                placeholder="0"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <label for="allowanceFabric">Panjang allowance fabric</label>
+              <input
+                type="number"
+                class="form-control"
+                id="allowanceFabric"
+                placeholder="0"
+              />
+            </div>
+            <div class="col-md-6 form-group">
+              <label for="totalQuantity">Total Quantity</label>
+              <input
+                type="number"
+                class="form-control"
+                id="totalQuantity"
                 placeholder="0"
               />
             </div>
@@ -100,10 +120,13 @@
           var TL = $("#totalLayer").val();
           var PG = $("#panjangGelar").val();
           var TC = $("#cacatFabric").val();
-          var STD = 0.6;
+          var A = $("#allowanceFabric").val();
+          var Q = $("#totalQuantity").val();
+          var STD = 1.2;
 
-          S = PR - (TL * PG + TC * STD * 2);
-          $("#sisa-fabric").text(S.toFixed(1) + ' (m)');
+          S = PR - (TL * PG + TC * STD) - (A * Q);
+          var SFix = S / 100;
+          $("#sisa-fabric").text(SFix.toFixed(1) + ' (m)');
         }
       );
     </script>
