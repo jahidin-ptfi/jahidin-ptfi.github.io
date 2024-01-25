@@ -113,7 +113,7 @@
     ></script>
 
     <script>
-      $("#cacatFabric, #panjangRoll, #panjangGelar, #cacatFabric").keyup(
+      $("#cacatFabric, #panjangRoll, #panjangGelar, #cacatFabric,#allowanceFabric, #totalQuantity").keyup(
         function (event) {
           var S = 0;
           var PR = $("#panjangRoll").val();
@@ -126,7 +126,7 @@
 
           S = PR - (TL * PG + TC * STD) - (A * Q);
           var SFix = S / 100;
-          $("#sisa-fabric").text(SFix.toFixed(1) + ' (m)');
+          $("#sisa-fabric").text(SFix.toFixed(2) + ' (m)');
         }
       );
     </script>
